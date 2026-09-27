@@ -1,24 +1,22 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowDownRight,
   ArrowUpRight,
   Check,
   ChevronDown,
-  Menu,
-  MessageCircle,
   Phone,
-  Wrench,
-  X,
 } from "lucide-react";
+import SiteHeader from "@/components/SiteHeader";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useState } from "react";
 
 const SITE_ROOT = "https://www.tentetamiri.com.tr";
 const PHONE = "+905536345035";
 const PHONE_LABEL = "0553 634 50 35";
-const WHATSAPP =
-  "https://wa.me/905536345035?text=Merhaba%2C%20tente%20tamiri%20i%C3%A7in%20bilgi%20almak%20istiyorum.";
+const whatsappHref = (message: string) => `https://wa.me/905536345035?text=${encodeURIComponent(message)}`;
 
 const showcaseItems = [
   {
@@ -114,7 +112,7 @@ const questions = [
 
 function SiteLogo({ dark = false }: { dark?: boolean }) {
   return (
-    <a className={dark ? "site-logo site-logo-dark" : "site-logo"} href="#top" aria-label="Tente Tamiri İstanbul">
+    <Link className={dark ? "site-logo site-logo-dark" : "site-logo"} href="/" aria-label="Tente Tamiri İstanbul">
       <Image
         src={SITE_ROOT + "/image/logo.png"}
         alt="Tente Tamiri logo"
@@ -123,59 +121,7 @@ function SiteLogo({ dark = false }: { dark?: boolean }) {
         unoptimized
         priority
       />
-    </a>
-  );
-}
-
-function Header() {
-  const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
-  const links = [
-    ["#hizmetler", "Hizmetler"],
-    ["#sistemler", "Tente sistemleri"],
-    ["#sss", "Sık sorulanlar"],
-    ["#iletisim", "İletişim"],
-  ];
-
-  return (
-    <>
-      <div className="utility-bar">
-        <div className="container utility-inner">
-          <span>İSTANBUL GENELİ TENTE SERVİSİ</span>
-          <a href={"tel:" + PHONE}><Phone size={14} aria-hidden="true" /> {PHONE_LABEL}</a>
-        </div>
-      </div>
-      <header className="site-header">
-        <div className="container header-inner">
-          <SiteLogo />
-          <nav className="main-nav" aria-label="Ana menü">
-            {links.map(([href, label]) => (
-              <a key={href} href={href} onClick={close}>{label}</a>
-            ))}
-          </nav>
-          <div className="header-actions">
-            <a className="header-call" href={WHATSAPP} target="_blank" rel="noreferrer">
-              <MessageCircle size={16} aria-hidden="true" />
-              <span>Hemen yazın</span>
-            </a>
-            <button
-              className="menu-button"
-              type="button"
-              onClick={() => setOpen((value) => !value)}
-              aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
-              aria-expanded={open}
-            >
-              {open ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
-        </div>
-        <nav className={open ? "mobile-nav mobile-nav-open" : "mobile-nav"} aria-label="Mobil menü">
-          {links.map(([href, label]) => (
-            <a key={href} href={href} onClick={close}>{label}<ArrowUpRight size={17} aria-hidden="true" /></a>
-          ))}
-        </nav>
-      </header>
-    </>
+    </Link>
   );
 }
 
@@ -196,15 +142,14 @@ function Hero() {
             <p className="hero-overline"><span /> İstanbul geneli servis</p>
             <div className="hero-wordmark">
               <h1>GÖLGEYİ<br /><span>GERİ</span><br />KAZANIN.</h1>
-              <span className="hero-index">01</span>
             </div>
             <p className="hero-intro">
               Tente, pergola, branda ve çadır sistemleri için hızlı ve doğru servis.
             </p>
             <div className="hero-actions">
-              <a className="red-button" href={WHATSAPP} target="_blank" rel="noreferrer">
-                <MessageCircle size={17} aria-hidden="true" />
-                Fotoğraf gönderin
+              <a className="red-button" href={whatsappHref("Merhaba, tente tamiri için fotoğraf gönderip fiyat almak istiyorum.")} target="_blank" rel="noreferrer">
+                <WhatsAppIcon size={18} className="whatsapp-icon" />
+                WhatsApp&apos;tan fotoğraf gönderin
               </a>
               <a className="hero-link" href="#hizmetler">
                 Hizmetleri gör <ArrowDownRight size={17} aria-hidden="true" />
@@ -223,15 +168,9 @@ function Hero() {
                 priority
               />
               <div className="hero-image-wash" aria-hidden="true" />
-              <span className="hero-image-label">GERÇEK UYGULAMA / {item.number}</span>
               <div className="hero-image-caption">
-                <span>{item.number}</span>
                 <p>{item.title}<small>{item.detail}</small></p>
               </div>
-            </div>
-            <div className="hero-side-note">
-              <Wrench size={18} aria-hidden="true" />
-              <span>İş başlamadan önce<br /><strong>net fiyat</strong></span>
             </div>
           </div>
         </div>
@@ -268,7 +207,7 @@ function Services() {
               <div className="service-card-copy">
                 <div className="service-card-title"><h3>{service.title}</h3><ArrowUpRight size={19} aria-hidden="true" /></div>
                 <p>{service.description}</p>
-                <a href={WHATSAPP} target="_blank" rel="noreferrer">Bilgi alın <ArrowUpRight size={14} aria-hidden="true" /></a>
+                <a href={whatsappHref(`${service.title} için fotoğraf gönderip fiyat almak istiyorum.`)} target="_blank" rel="noreferrer"><WhatsAppIcon size={15} className="whatsapp-icon" /> {service.title} için yazın <ArrowUpRight size={14} aria-hidden="true" /></a>
               </div>
             </article>
           ))}
@@ -288,7 +227,7 @@ function Systems() {
           <p>
             Bir kumaş, bir motor veya bir bağlantı noktasındaki küçük sorun bütün sistemi etkileyebilir. Doğru parçayı bulur, sağlam olanı koruruz.
           </p>
-          <a className="light-link" href={WHATSAPP} target="_blank" rel="noreferrer">Sorunuzu anlatın <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <a className="light-link" href={whatsappHref("Pergola ve tente sistemleri için servis bilgisi almak istiyorum.")} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} className="whatsapp-icon" /> Pergola servisi için yazın <ArrowUpRight size={16} aria-hidden="true" /></a>
         </div>
         <div className="system-mosaic">
           <div className="mosaic-image mosaic-image-large"><Image src={showcaseItems[1].image} alt="Pergola tente uygulaması" fill unoptimized sizes="(max-width: 760px) 100vw, 46vw" /></div>
@@ -311,7 +250,7 @@ function ServiceIndex() {
         </div>
         <div className="index-list">
           {showcaseItems.map((item) => (
-            <a className="index-row" href={WHATSAPP} target="_blank" rel="noreferrer" key={item.number}>
+            <a className="index-row" href={whatsappHref(`${item.title} için servis bilgisi almak istiyorum.`)} target="_blank" rel="noreferrer" key={item.number}>
               <span>{item.number}</span>
               <h3>{item.title}</h3>
               <p>{item.detail}</p>
@@ -392,7 +331,7 @@ function Contact() {
         <div className="contact-copy">
           <p>Arızayı kısaca anlatın, mümkünse fotoğrafı ekleyin. İstanbul&apos;daki servis planını birlikte oluşturalım.</p>
           <div className="contact-actions">
-            <a className="red-button" href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={17} aria-hidden="true" /> WhatsApp&apos;tan yazın</a>
+            <a className="red-button" href={whatsappHref("Merhaba, tente servisiniz için fotoğraf ve fiyat bilgisi almak istiyorum.")} target="_blank" rel="noreferrer"><WhatsAppIcon size={18} className="whatsapp-icon" /> WhatsApp&apos;tan yazın</a>
             <a className="contact-phone" href={"tel:" + PHONE}><Phone size={16} aria-hidden="true" /> {PHONE_LABEL}</a>
           </div>
         </div>
@@ -404,7 +343,7 @@ function Contact() {
 export default function HomePage() {
   return (
     <main>
-      <Header />
+      <SiteHeader />
       <Hero />
       <Services />
       <Systems />

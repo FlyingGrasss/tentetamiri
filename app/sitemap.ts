@@ -1,13 +1,32 @@
 import type { MetadataRoute } from "next";
+import { seoServices, servicePath } from "@/lib/seo-content";
+
+const siteUrl = "https://www.tentetamiri.com.tr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const pages: MetadataRoute.Sitemap = [
     {
-      url: "https://www.tentetamiri.com.tr",
+      url: siteUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
-      images: ["https://www.tentetamiri.com.tr/admin/image/653-tente-tamiri10.jpg"],
+      images: [`${siteUrl}/admin/image/653-tente-tamiri10.jpg`],
     },
+    {
+      url: `${siteUrl}/hizmetler`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+      images: [`${siteUrl}/admin/image/653-tente-tamiri10.jpg`],
+    },
+  ];
+
+  return [
+    ...pages,
+    ...seoServices.map((service) => ({
+      url: `${siteUrl}${servicePath(service)}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      images: [service.image],
+    })),
   ];
 }
