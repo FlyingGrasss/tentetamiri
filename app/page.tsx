@@ -124,7 +124,7 @@ function Hero() {
           <div className="hero-copy">
             <p className="hero-overline"><span /> İstanbul geneli servis</p>
             <div className="hero-wordmark">
-              <h1>GÖLGEYİ<br /><span>GERİ</span><br />KAZANIN.</h1>
+              <h1><span className="hero-line hero-line-top">GÖLGEYİ</span><span className="hero-line hero-line-middle">GERİ</span><span className="hero-line hero-line-bottom">KAZANIN.</span></h1>
             </div>
             <p className="hero-intro">
               Tente, pergola, branda ve çadır sistemleri için hızlı ve doğru servis.

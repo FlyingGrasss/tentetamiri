@@ -199,6 +199,7 @@ a:focus-visible {
   padding: 7px;
   color: #fff;
   cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
 }
 
 .menu-button:hover {
@@ -216,7 +217,8 @@ a:focus-visible {
   width: min(320px, 88vw);
   background: #121212;
   transform: translateX(100%);
-  transition: transform 300ms ease;
+  will-change: transform;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-nav-open {
@@ -353,7 +355,25 @@ a:focus-visible {
   align-items: flex-start;
 }
 
-.hero h1 span,
+.hero-line {
+  display: block;
+}
+
+.hero-line-top {
+  line-height: 1.06;
+}
+
+.hero-line-middle {
+  margin-top: 0.02em;
+  line-height: 0.92;
+}
+
+.hero-line-bottom {
+  margin-top: -0.06em;
+  line-height: 0.82;
+}
+
+.hero h1 .hero-line-middle,
 .section-heading h2 em,
 .systems-intro h2 em,
 .process-heading h2 em,
@@ -744,9 +764,9 @@ a:focus-visible {
 
 .systems-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   align-items: center;
-  gap: clamp(52px, 8vw, 126px);
+  gap: clamp(52px, 6vw, 88px);
 }
 
 .section-label-light {
@@ -755,7 +775,7 @@ a:focus-visible {
 
 .systems-intro h2 {
   color: #fff;
-  max-width: 390px;
+  max-width: 600px;
   font-size: clamp(60px, 8vw, 104px);
   line-height: 0.96;
 }
@@ -1060,6 +1080,28 @@ a:focus-visible {
 .contact-section .red-button:hover {
   background: #fff;
   color: var(--black);
+}
+
+.contact-section .section-label span {
+  color: #fff;
+}
+
+.contact-section .whatsapp-button {
+  background: #25d366;
+  color: #101010;
+}
+
+.contact-section .whatsapp-button .whatsapp-icon {
+  color: #101010;
+}
+
+.contact-section .whatsapp-button:hover {
+  background: #fff;
+  color: #25d366;
+}
+
+.contact-section .whatsapp-button:hover .whatsapp-icon {
+  color: #25d366;
 }
 
 .contact-phone {
@@ -1378,7 +1420,7 @@ a:focus-visible {
 .footer-main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  align-items: start;
+  align-items: center;
   gap: 30px;
   padding-bottom: 42px;
 }
@@ -1811,11 +1853,18 @@ a:focus-visible {
   .footer-main {
     grid-template-columns: 1fr;
     gap: 24px;
+    justify-items: center;
+    text-align: center;
   }
 
   .footer-links {
-    justify-content: flex-start;
     flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
   }
 }
 
