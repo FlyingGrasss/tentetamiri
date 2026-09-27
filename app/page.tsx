@@ -286,7 +286,7 @@ function Faq() {
           <h2>Cevabı<br /><em>merak edilenler.</em></h2>
           <p className="section-copy">Bulamadığınız bir cevap varsa doğrudan yazın. Kısa ve net cevap veririz.</p>
         </div>
-        <div className="faq-list">
+        <div className="faq-list" data-lenis-prevent>
           {questions.map((item, index) => (
             <div className={open === index ? "faq-item faq-item-open" : "faq-item"} key={item.question}>
               <button type="button" onClick={() => setOpen(open === index ? null : index)} aria-expanded={open === index}>

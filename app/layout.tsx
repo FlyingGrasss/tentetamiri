@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Instrument_Serif, Manrope, Space_Grotesk } from "next/font/google";
 import FontVariant from "@/components/FontVariant";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const siteUrl = "https://www.tentetamiri.com.tr";
@@ -245,6 +246,7 @@ export default function RootLayout({
     >
       <body>
         <FontVariant />
+        <SmoothScroll />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
