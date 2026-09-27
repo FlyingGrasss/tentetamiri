@@ -4,7 +4,7 @@ import FontVariant from "@/components/FontVariant";
 import "./globals.css";
 
 const siteUrl = "https://www.tentetamiri.com.tr";
-const socialImage = `${siteUrl}/admin/image/653-tente-tamiri10.jpg`;
+const socialImage = "https://tentetamiri.vercel.app/og-image.png";
 const logoImage = `${siteUrl}/image/logo.png`;
 
 const manrope = Manrope({
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     "content-language": "tr-TR",
     "geo.region": "TR-34",
     "geo.placename": "İstanbul",
-    "og:image:type": "image/jpeg",
+    "og:image:type": "image/png",
   },
 };
 

@@ -110,6 +110,7 @@ a:focus-visible {
 }
 
 .header-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -134,11 +135,15 @@ a:focus-visible {
 }
 
 .header-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: grid;
   justify-items: center;
   gap: 3px;
-  margin-inline: auto;
+  margin: 0;
   text-align: center;
+  white-space: nowrap;
 }
 
 .header-brand strong {
