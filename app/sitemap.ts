@@ -5,8 +5,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://www.tentetamiri.com.tr",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1,
+      images: ["https://www.tentetamiri.com.tr/admin/image/653-tente-tamiri10.jpg"],
     },
   ];
 }

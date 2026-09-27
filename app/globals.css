@@ -11,6 +11,28 @@
   --muted: #6b6b6b;
   --blue: #1081a6;
   --container: 1230px;
+  --site-font: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  --site-display: var(--site-font);
+}
+
+html[data-font="manrope"] {
+  --site-font: var(--font-manrope), Arial, sans-serif;
+  --site-display: var(--font-manrope), Arial, sans-serif;
+}
+
+html[data-font="space"] {
+  --site-font: var(--font-space), Arial, sans-serif;
+  --site-display: var(--font-space), Arial, sans-serif;
+}
+
+html[data-font="dm"] {
+  --site-font: var(--font-dm-sans), Arial, sans-serif;
+  --site-display: var(--font-dm-sans), Arial, sans-serif;
+}
+
+html[data-font="editorial"] {
+  --site-font: var(--font-manrope), Arial, sans-serif;
+  --site-display: var(--font-instrument), Georgia, serif;
 }
 
 * {
@@ -26,7 +48,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--black);
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: var(--site-font);
 }
 
 a {
@@ -249,6 +271,7 @@ a:focus-visible {
 .faq-grid h2,
 .contact-grid h2 {
   margin: 0;
+  font-family: var(--site-display);
   font-weight: 800;
   letter-spacing: -0.075em;
   line-height: 0.86;
