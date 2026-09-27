@@ -180,78 +180,65 @@ function Header() {
 }
 
 function Hero() {
-  const [active, setActive] = useState(0);
-  const item = showcaseItems[active];
+  const item = showcaseItems[0];
 
   return (
     <section className="hero" id="top">
       <div className="hero-grid-lines" aria-hidden="true" />
-      <div className="container hero-topline">
-        <span>01 / TENTE TAMİRİ</span>
-        <span>GÖLGELENDİRME SİSTEMLERİ</span>
-        <span>İSTANBUL / TR</span>
-      </div>
-      <div className="container hero-content">
-        <div className="hero-copy">
-          <p className="hero-overline"><span /> Tamir / montaj / bakım</p>
-          <h1>GÖLGEYİ<br /><span>GERİ</span><br />KAZANIN.</h1>
-          <p className="hero-intro">
-            Tente, pergola, branda ve çadır sistemleri için İstanbul&apos;da hızlı ve doğru servis.
-          </p>
-          <div className="hero-actions">
-            <a className="red-button" href={WHATSAPP} target="_blank" rel="noreferrer">
-              <MessageCircle size={17} aria-hidden="true" />
-              Fotoğraf gönderin
-            </a>
-            <a className="hero-link" href="#hizmetler">
-              Hizmetleri gör <ArrowDownRight size={17} aria-hidden="true" />
-            </a>
-          </div>
-          <div className="hero-facts">
-            <span><strong>7/24</strong> mesaj kabulü</span>
-            <span><strong>İstanbul</strong> tüm ilçeler</span>
-          </div>
+      <div className="container hero-shell">
+        <div className="hero-topline">
+          <span>TENTE TAMİRİ / MONTAJ / BAKIM</span>
+          <span>GÖLGELENDİRME SİSTEMLERİ</span>
+          <span>İSTANBUL / TR</span>
         </div>
-        <div className="hero-stage">
-          <div className="hero-image-wrap">
-            <Image
-              key={item.image}
-              src={item.image}
-              alt={item.title}
-              fill
-              unoptimized
-              sizes="(max-width: 760px) 100vw, 54vw"
-              className="hero-image"
-              priority
-            />
-            <div className="hero-image-wash" aria-hidden="true" />
-            <span className="hero-image-label">GERÇEK UYGULAMA / {item.number}</span>
-            <div className="hero-image-caption">
-              <span>{item.number}</span>
-              <p>{item.title}<small>{item.detail}</small></p>
+        <div className="hero-content">
+          <div className="hero-copy">
+            <p className="hero-overline"><span /> İstanbul geneli servis</p>
+            <div className="hero-wordmark">
+              <h1>GÖLGEYİ<br /><span>GERİ</span><br />KAZANIN.</h1>
+              <span className="hero-index">01</span>
+            </div>
+            <p className="hero-intro">
+              Tente, pergola, branda ve çadır sistemleri için hızlı ve doğru servis.
+            </p>
+            <div className="hero-actions">
+              <a className="red-button" href={WHATSAPP} target="_blank" rel="noreferrer">
+                <MessageCircle size={17} aria-hidden="true" />
+                Fotoğraf gönderin
+              </a>
+              <a className="hero-link" href="#hizmetler">
+                Hizmetleri gör <ArrowDownRight size={17} aria-hidden="true" />
+              </a>
             </div>
           </div>
-          <div className="hero-side-note">
-            <Wrench size={18} aria-hidden="true" />
-            <span>İş başlamadan önce<br /><strong>net fiyat</strong></span>
+          <div className="hero-stage">
+            <div className="hero-image-wrap">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                unoptimized
+                sizes="(max-width: 760px) 100vw, 49vw"
+                className="hero-image"
+                priority
+              />
+              <div className="hero-image-wash" aria-hidden="true" />
+              <span className="hero-image-label">GERÇEK UYGULAMA / {item.number}</span>
+              <div className="hero-image-caption">
+                <span>{item.number}</span>
+                <p>{item.title}<small>{item.detail}</small></p>
+              </div>
+            </div>
+            <div className="hero-side-note">
+              <Wrench size={18} aria-hidden="true" />
+              <span>İş başlamadan önce<br /><strong>net fiyat</strong></span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="container hero-selector">
-        <span className="selector-label">Hızlı bakış / servisler</span>
-        <div className="selector-list">
-          {showcaseItems.map((showcase, index) => (
-            <button
-              key={showcase.number}
-              className={index === active ? "selector-item selector-item-active" : "selector-item"}
-              type="button"
-              onClick={() => setActive(index)}
-              aria-pressed={index === active}
-            >
-              <span>{showcase.number}</span>
-              {showcase.title}
-            </button>
-          ))}
+        <div className="hero-footer">
+          <span>Ev ve işletmeler için tente servisi</span>
+          <span>Fotoğrafla başlayın / {PHONE_LABEL}</span>
+          <a href="#hizmetler">Aşağı kaydır <ArrowDownRight size={15} aria-hidden="true" /></a>
         </div>
       </div>
     </section>
@@ -297,7 +284,7 @@ function Systems() {
       <div className="container systems-grid">
         <div className="systems-intro">
           <p className="section-label section-label-light"><span>03</span> Tente sistemleri</p>
-          <h2>İyi gölge,<br /><em>iyi detaydır.</em></h2>
+          <h2>İyi gölge,<br /><em>iyi<br />detaydır.</em></h2>
           <p>
             Bir kumaş, bir motor veya bir bağlantı noktasındaki küçük sorun bütün sistemi etkileyebilir. Doğru parçayı bulur, sağlam olanı koruruz.
           </p>

@@ -186,6 +186,14 @@ a:focus-visible {
   background-size: 100% 100%, 100% 74px;
 }
 
+.hero-shell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-height: calc(100svh - 142px);
+  grid-template-rows: auto 1fr auto;
+}
+
 .hero-topline {
   position: relative;
   z-index: 1;
@@ -209,15 +217,11 @@ a:focus-visible {
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
   align-items: center;
-  gap: clamp(42px, 7vw, 108px);
-  min-height: 630px;
-  padding-top: 72px;
-  padding-bottom: 66px;
+  gap: clamp(48px, 6.5vw, 105px);
+  padding: clamp(36px, 6vh, 72px) 0;
 }
 
 .hero-overline {
@@ -252,7 +256,21 @@ a:focus-visible {
 
 .hero h1 {
   max-width: 570px;
-  font-size: clamp(58px, 8.3vw, 122px);
+  font-size: clamp(55px, 7.4vw, 112px);
+}
+
+.hero-wordmark {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(8px, 1vw, 16px);
+}
+
+.hero-index {
+  color: #ff6969;
+  font-size: clamp(24px, 3.8vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.86;
 }
 
 .hero h1 span,
@@ -346,7 +364,7 @@ a:focus-visible {
 
 .hero-image-wrap {
   position: relative;
-  min-height: 510px;
+  min-height: min(62vh, 545px);
   overflow: hidden;
   background: #242424;
 }
@@ -426,6 +444,36 @@ a:focus-visible {
 .hero-side-note strong {
   color: #fff;
   font-size: 15px;
+}
+
+.hero-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid rgb(255 255 255 / 0.2);
+  padding: 17px 0 19px;
+  color: rgb(255 255 255 / 0.48);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-footer span:nth-child(2) {
+  text-align: center;
+}
+
+.hero-footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  color: #fff;
+}
+
+.hero-footer a:hover {
+  color: #ff6969;
 }
 
 .hero-selector {
@@ -622,6 +670,9 @@ a:focus-visible {
 }
 
 .systems-section {
+  display: flex;
+  min-height: 690px;
+  align-items: center;
   padding: 121px 0 127px;
   background: var(--charcoal);
 }
@@ -639,6 +690,8 @@ a:focus-visible {
 
 .systems-intro h2 {
   color: #fff;
+  max-width: 390px;
+  font-size: clamp(60px, 8vw, 104px);
 }
 
 .systems-intro > p:not(.section-label) {
@@ -809,12 +862,16 @@ a:focus-visible {
 }
 
 .faq-section {
+  height: 680px;
+  overflow: hidden;
   padding: 123px 0 135px;
   background: var(--soft);
 }
 
 .faq-grid {
   display: grid;
+  height: 100%;
+  min-height: 0;
   grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
   gap: 115px;
 }
@@ -824,6 +881,7 @@ a:focus-visible {
 }
 
 .faq-list {
+  min-height: 0;
   border-top: 1px solid var(--line);
 }
 
@@ -1103,6 +1161,10 @@ a:focus-visible {
     font-size: 7px;
   }
 
+  .hero-shell {
+    min-height: auto;
+  }
+
   .hero-topline span:nth-child(2) {
     display: none;
   }
@@ -1141,6 +1203,24 @@ a:focus-visible {
     min-height: 390px;
   }
 
+  .hero-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 15px 0;
+    font-size: 7px;
+  }
+
+  .hero-footer span:nth-child(2) {
+    text-align: right;
+  }
+
+  .hero-footer a {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    border-top: 1px solid rgb(255 255 255 / 0.2);
+    padding-top: 12px;
+  }
+
   .hero-selector {
     display: block;
     padding-bottom: 16px;
@@ -1167,6 +1247,10 @@ a:focus-visible {
   .process-section,
   .faq-section {
     padding: 84px 0;
+  }
+
+  .systems-section {
+    min-height: 0;
   }
 
   .section-heading {
@@ -1204,6 +1288,18 @@ a:focus-visible {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 52px;
+  }
+
+  .faq-section {
+    height: 1000px;
+  }
+
+  .faq-grid {
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .faq-list {
+    overflow-y: auto;
   }
 
   .systems-intro > p:not(.section-label) {
