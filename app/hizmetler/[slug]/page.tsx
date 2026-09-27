@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/SiteHeader";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+import SiteFooter from "@/components/SiteFooter";
 import { getSeoService, seoServices, servicePath } from "@/lib/seo-content";
 
 const siteUrl = "https://www.tentetamiri.com.tr";
@@ -86,10 +86,10 @@ export default async function ServiceDetailPage({ params }: Props) {
               <div><p className="section-label"><span>03</span> Sık sorulanlar</p><h2 id="faq-title">Sorularınız<br /><em>cevaplansın.</em></h2></div>
               <div className="seo-detail-faq-list">{service.faqs.map((faq) => <div key={faq.question}><h3>{faq.question}</h3><p>{faq.answer}</p></div>)}</div>
             </section>
-            <section className="seo-detail-cta"><p className="section-label section-label-light"><span>04</span> Hızlı başlangıç</p><h2>Fotoğraf gönderin,<br /><em>servisi netleştirelim.</em></h2><a className="red-button" href={`https://wa.me/905536345035?text=${encodeURIComponent(`${service.title} için fotoğraf gönderip fiyat almak istiyorum.`)}`} target="_blank" rel="noreferrer"><WhatsAppIcon size={18} className="whatsapp-icon" /> WhatsApp&apos;tan yazın <span aria-hidden="true">↗</span></a></section>
           </article>
         </div>
       </main>
+      <SiteFooter />
     </>
   );
 }

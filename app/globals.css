@@ -345,6 +345,7 @@ a:focus-visible {
 .hero h1 {
   max-width: 570px;
   font-size: clamp(55px, 7.4vw, 112px);
+  line-height: 0.96;
 }
 
 .hero-wordmark {
@@ -395,6 +396,27 @@ a:focus-visible {
 .red-button:hover {
   background: var(--red-dark);
   transform: translateY(-2px);
+}
+
+.whatsapp-button {
+  border-color: #25d366;
+  background: #25d366;
+  color: #101010;
+}
+
+.whatsapp-button .whatsapp-icon {
+  color: #101010;
+}
+
+.whatsapp-button:hover {
+  border-color: #fff;
+  background: #fff;
+  color: #25d366;
+  transform: translateY(-2px);
+}
+
+.whatsapp-button:hover .whatsapp-icon {
+  color: #25d366;
 }
 
 .hero-link,
@@ -735,6 +757,7 @@ a:focus-visible {
   color: #fff;
   max-width: 390px;
   font-size: clamp(60px, 8vw, 104px);
+  line-height: 0.96;
 }
 
 .systems-intro > p:not(.section-label) {

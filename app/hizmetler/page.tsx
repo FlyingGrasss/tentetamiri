@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+import SiteFooter from "@/components/SiteFooter";
 import { servicePath, seoServices } from "@/lib/seo-content";
 
 const siteUrl = "https://www.tentetamiri.com.tr";
@@ -79,13 +79,8 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-        <section className="seo-page-cta">
-          <div className="container seo-page-cta-inner">
-            <div><p className="section-label section-label-light"><span>03</span> Hızlı başlangıç</p><h2>Fotoğrafı gönderin,<br /><em>önce sorunu anlayalım.</em></h2></div>
-            <a className="red-button" href="https://wa.me/905536345035?text=Merhaba%2C%20hangi%20tente%20servisine%20ihtiyac%C4%B1m%20oldu%C4%9Funu%20payla%C5%9Fmak%20istiyorum." target="_blank" rel="noreferrer"><WhatsAppIcon size={18} className="whatsapp-icon" /> WhatsApp&apos;tan yazın <span aria-hidden="true">↗</span></a>
-          </div>
-        </section>
       </main>
+      <SiteFooter />
     </>
   );
 }

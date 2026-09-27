@@ -54,7 +54,7 @@ export default function SiteHeader() {
             <small>İSTANBUL GENELİ SERVİS</small>
           </Link>
           <div className="header-actions">
-            <a className="header-call" href={whatsappHref("Merhaba, tente servisi için bilgi almak istiyorum.")} target="_blank" rel="noreferrer">
+            <a className="header-call whatsapp-button" href={whatsappHref("Merhaba, tente servisi için bilgi almak istiyorum.")} target="_blank" rel="noreferrer">
               <WhatsAppIcon size={17} className="whatsapp-icon" />
               <span>WhatsApp</span>
             </a>

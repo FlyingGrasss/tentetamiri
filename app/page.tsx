@@ -1,20 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowDownRight,
   ArrowUpRight,
   Check,
   ChevronDown,
-  Phone,
 } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useState } from "react";
 
 const SITE_ROOT = "https://www.tentetamiri.com.tr";
-const PHONE = "+905536345035";
 const PHONE_LABEL = "0553 634 50 35";
 const whatsappHref = (message: string) => `https://wa.me/905536345035?text=${encodeURIComponent(message)}`;
 
@@ -110,21 +108,6 @@ const questions = [
   },
 ];
 
-function SiteLogo({ dark = false }: { dark?: boolean }) {
-  return (
-    <Link className={dark ? "site-logo site-logo-dark" : "site-logo"} href="/" aria-label="Tente Tamiri İstanbul">
-      <Image
-        src={SITE_ROOT + "/image/logo.png"}
-        alt="Tente Tamiri logo"
-        width={278}
-        height={130}
-        unoptimized
-        priority
-      />
-    </Link>
-  );
-}
-
 function Hero() {
   const item = showcaseItems[0];
 
@@ -147,7 +130,7 @@ function Hero() {
               Tente, pergola, branda ve çadır sistemleri için hızlı ve doğru servis.
             </p>
             <div className="hero-actions">
-              <a className="red-button" href={whatsappHref("Merhaba, tente tamiri için fotoğraf gönderip fiyat almak istiyorum.")} target="_blank" rel="noreferrer">
+              <a className="red-button whatsapp-button" href={whatsappHref("Merhaba, tente tamiri için fotoğraf gönderip fiyat almak istiyorum.")} target="_blank" rel="noreferrer">
                 <WhatsAppIcon size={18} className="whatsapp-icon" />
                 WhatsApp&apos;tan fotoğraf gönderin
               </a>
@@ -223,7 +206,7 @@ function Systems() {
       <div className="container systems-grid">
         <div className="systems-intro">
           <p className="section-label section-label-light"><span>03</span> Tente sistemleri</p>
-          <h2>İyi gölge,<br /><em>iyi<br />detaydır.</em></h2>
+          <h2>İyi gölge,<br /><em>iyi detaydır.</em></h2>
           <p>
             Bir kumaş, bir motor veya bir bağlantı noktasındaki küçük sorun bütün sistemi etkileyebilir. Doğru parçayı bulur, sağlam olanı koruruz.
           </p>
@@ -319,27 +302,6 @@ function Faq() {
   );
 }
 
-function Contact() {
-  return (
-    <section className="contact-section" id="iletisim">
-      <div className="contact-lines" aria-hidden="true" />
-      <div className="container contact-grid">
-        <div>
-          <p className="section-label section-label-light"><span>07</span> İletişim</p>
-          <h2>Tenteniz için<br /><em>buradayız.</em></h2>
-        </div>
-        <div className="contact-copy">
-          <p>Arızayı kısaca anlatın, mümkünse fotoğrafı ekleyin. İstanbul&apos;daki servis planını birlikte oluşturalım.</p>
-          <div className="contact-actions">
-            <a className="red-button" href={whatsappHref("Merhaba, tente servisiniz için fotoğraf ve fiyat bilgisi almak istiyorum.")} target="_blank" rel="noreferrer"><WhatsAppIcon size={18} className="whatsapp-icon" /> WhatsApp&apos;tan yazın</a>
-            <a className="contact-phone" href={"tel:" + PHONE}><Phone size={16} aria-hidden="true" /> {PHONE_LABEL}</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function HomePage() {
   return (
     <main>
@@ -350,15 +312,7 @@ export default function HomePage() {
       <ServiceIndex />
       <Process />
       <Faq />
-      <Contact />
-      <footer className="site-footer">
-        <div className="container footer-main">
-          <SiteLogo dark />
-          <p>İstanbul&apos;da tente tamiri, montaj ve bakım.<br />Gölgenizi yeniden kuruyoruz.</p>
-          <div className="footer-links"><a href="#hizmetler">Hizmetler</a><a href="#sistemler">Sistemler</a><a href="#sss">SSS</a><a href={"tel:" + PHONE}>Ara</a></div>
-        </div>
-        <div className="container footer-bottom"><span>© {new Date().getFullYear()} Tente Tamiri İstanbul</span><span>İstanbul / Türkiye</span><span><a href={SITE_ROOT} target="_blank" rel="noreferrer">tentetamiri.com.tr</a></span></div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
