@@ -5,19 +5,19 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { servicePath, seoServices } from "@/lib/seo-content";
 
-const siteUrl = "https://www.tentetamiri.com.tr";
+const siteUrl = "https://tentelisa.com";
 
 export const metadata: Metadata = {
-  title: "Tente Servisleri İstanbul | Tamir, Montaj ve Bakım",
+  title: "Tente ve Pergola Hizmetleri | Tentelisa Esenler İstanbul",
   description:
-    "İstanbul genelinde tente tamiri, otomatik tente, pergola, branda, çadır ve tente montajı hizmetleri. İhtiyacınıza uygun servis başlığını inceleyin.",
+    "Esenler ve İstanbul genelinde Tentelisa ile tente tamiri, otomatik tente, pergola sistemleri, branda, çadır ve montaj hizmetleri.",
   alternates: { canonical: "/hizmetler" },
   openGraph: {
-    title: "Tente Servisleri İstanbul | Tamir, Montaj ve Bakım",
+    title: "Tente ve Pergola Hizmetleri | Tentelisa Esenler İstanbul",
     description:
-      "İstanbul genelinde tente tamiri, otomatik tente, pergola, branda, çadır ve tente montajı hizmetleri.",
+      "Esenler ve İstanbul genelinde Tentelisa ile tente tamiri, otomatik tente, pergola sistemleri, branda, çadır ve montaj hizmetleri.",
     url: `${siteUrl}/hizmetler`,
-    images: [{ url: `${siteUrl}/admin/image/653-tente-tamiri10.jpg`, width: 1200, height: 630, alt: "İstanbul tente servisleri" }],
+    images: [{ url: `${siteUrl}/admin/image/653-tente-tamiri10.jpg`, width: 1200, height: 630, alt: "Tentelisa tente ve pergola servisleri" }],
   },
 };
 
@@ -28,7 +28,7 @@ const structuredData = {
       "@type": "CollectionPage",
       "@id": `${siteUrl}/hizmetler#page`,
       url: `${siteUrl}/hizmetler`,
-      name: "Tente Servisleri İstanbul",
+      name: "Tentelisa Tente ve Pergola Hizmetleri",
       inLanguage: "tr-TR",
     },
     {
@@ -52,10 +52,10 @@ export default function ServicesPage() {
         <section className="seo-page-hero">
           <div className="container seo-page-hero-grid">
             <div>
-              <p className="section-label section-label-light"><span>01</span> İstanbul tente servisleri</p>
+              <p className="section-label section-label-light"><span>01</span> Tentelisa servisleri</p>
               <h1>Tenteniz için<br /><em>doğru servis.</em></h1>
             </div>
-            <p>Arızayı, kullanım amacını ve alanı değerlendirerek tente, pergola, branda ve çadır sistemleri için uygulanabilir çözümü birlikte belirliyoruz.</p>
+            <p>Esenler merkezli atölyemizden tente, pergola, branda ve çadır sistemleri için doğru tespiti yapıp en uygun çözümü sunuyoruz.</p>
           </div>
         </section>
         <section className="seo-service-section">

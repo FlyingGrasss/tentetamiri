@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Tente Tamiri İstanbul",
-    short_name: "Tente Tamiri",
+    name: "Tentelisa Tente | Pergola Sistemleri",
+    short_name: "Tentelisa",
     description:
-      "İstanbul genelinde tente tamiri, pergola, otomatik tente, branda ve çadır servisleri.",
+      "Esenler ve İstanbul genelinde tente tamiri, pergola sistemleri, otomatik tente ve branda servisleri.",
     lang: "tr-TR",
     start_url: "/",
     display: "browser",

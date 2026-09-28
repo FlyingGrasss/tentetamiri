@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { seoServices, servicePath } from "@/lib/seo-content";
 
-const siteUrl = "https://www.tentetamiri.com.tr";
+const siteUrl = "https://tentelisa.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = [

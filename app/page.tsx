@@ -13,8 +13,8 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useState } from "react";
 
 const SITE_ROOT = "https://www.tentetamiri.com.tr";
-const PHONE_LABEL = "0553 634 50 35";
-const whatsappHref = (message: string) => `https://wa.me/905536345035?text=${encodeURIComponent(message)}`;
+const PHONE_LABEL = "0545 364 31 44";
+const whatsappHref = (message: string) => `https://wa.me/905453643144?text=${encodeURIComponent(message)}`;
 
 const showcaseItems = [
   {
@@ -94,7 +94,7 @@ const questions = [
   {
     question: "İstanbul'un her ilçesine geliyor musunuz?",
     answer:
-      "İstanbul genelinde servis planlıyoruz. İlçenizi, mümkünse kısa bir videoyu ve uygun olduğunuz zamanı iletin; ulaşım ve randevu bilgisini netleştirelim.",
+      "Esenler merkezli atölyemizden İstanbul genelinde servis ve montaj planlıyoruz. Fotoğraf veya kısa bir video göndererek hızlıca keşif ve randevu oluşturabilirsiniz.",
   },
   {
     question: "Tamir mi, yenileme mi gerektiğini nasıl anlarım?",
@@ -116,21 +116,21 @@ function Hero() {
       <div className="hero-grid-lines" aria-hidden="true" />
       <div className="container hero-shell">
         <div className="hero-topline">
-          <span>TENTE TAMİRİ / MONTAJ / BAKIM</span>
+          <span>TENTELİSA / PERGOLA / TENTE</span>
           <span>GÖLGELENDİRME SİSTEMLERİ</span>
-          <span>İSTANBUL / TR</span>
+          <span>ESENLER / İSTANBUL</span>
         </div>
         <div className="hero-content">
           <div className="hero-copy">
-            <p className="hero-overline"><span /> İstanbul geneli servis</p>
+            <p className="hero-overline"><span /> Esenler &amp; İstanbul geneli servis</p>
             <div className="hero-wordmark">
               <h1><span className="hero-line hero-line-top">GÖLGEYİ</span><span className="hero-line hero-line-middle">GERİ</span><span className="hero-line hero-line-bottom">KAZANIN.</span></h1>
             </div>
             <p className="hero-intro">
-              Tente, pergola, branda ve çadır sistemleri için hızlı ve doğru servis.
+              Tentelisa güvencesiyle tente, pergola sistemleri, branda ve çadır onarımı, montajı ve bakımı.
             </p>
             <div className="hero-actions">
-              <a className="red-button whatsapp-button" href={whatsappHref("Merhaba, tente tamiri için fotoğraf gönderip fiyat almak istiyorum.")} target="_blank" rel="noreferrer">
+              <a className="red-button whatsapp-button" href={whatsappHref("Merhaba, tente ve pergola sistemleri için fotoğraf gönderip fiyat almak istiyorum.")} target="_blank" rel="noreferrer">
                 <WhatsAppIcon size={18} className="whatsapp-icon" />
                 WhatsApp&apos;tan fotoğraf gönderin
               </a>
@@ -158,7 +158,7 @@ function Hero() {
           </div>
         </div>
         <div className="hero-footer">
-          <span>Ev ve işletmeler için tente servisi</span>
+          <span>Ev ve işletmeler için tente &amp; pergola servisi</span>
           <span>Fotoğrafla başlayın / {PHONE_LABEL}</span>
           <a href="#hizmetler">Aşağı kaydır <ArrowDownRight size={15} aria-hidden="true" /></a>
         </div>

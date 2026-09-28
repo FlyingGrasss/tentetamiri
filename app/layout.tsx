@@ -4,8 +4,8 @@ import FontVariant from "@/components/FontVariant";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
-const siteUrl = "https://www.tentetamiri.com.tr";
-const socialImage = "https://tentetamiri.vercel.app/og-image.png";
+const siteUrl = "https://tentelisa.com";
+const socialImage = "https://tentelisa.com/og-image.png";
 const logoImage = `${siteUrl}/image/logo.png`;
 
 const manrope = Manrope({
@@ -33,20 +33,24 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
-const title = "Tente Tamiri İstanbul | Tente Servisi, Pergola ve Branda Onarımı";
+const title = "Tentelisa Tente | Pergola sistemleri Esenler";
 const description =
-  "İstanbul genelinde tente tamiri, otomatik tente ve pergola servisi, branda ve çadır onarımı. Fotoğraf gönderin, hızlı keşif ve net fiyat alın.";
+  "Tentelisa Tente & Pergola Sistemleri: Esenler ve İstanbul genelinde tente tamiri, otomatik pergola, branda ve çadır onarımı, montaj servisi. Hızlı keşif ve net fiyat.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  applicationName: "Tente Tamiri İstanbul",
+  applicationName: "Tentelisa Tente | Pergola Sistemleri",
   title: {
     default: title,
-    template: "%s | Tente Tamiri İstanbul",
+    template: "%s | Tentelisa Tente Esenler",
   },
   description,
   keywords: [
-    "tente tamiri",
+    "Tentelisa",
+    "Tentelisa tente",
+    "Tentelisa pergola",
+    "tente tamiri Esenler",
+    "pergola sistemleri Esenler",
     "İstanbul tente tamiri",
     "tente servisi İstanbul",
     "otomatik tente servisi",
@@ -58,12 +62,12 @@ export const metadata: Metadata = {
     "tente bakım servisi",
     "tente mekanizması tamiri",
     "motorlu tente tamiri",
-    "İstanbul tente ustası",
+    "Esenler tente ustası",
   ],
   alternates: { canonical: "/" },
-  authors: [{ name: "Tente Tamiri İstanbul" }],
-  creator: "Tente Tamiri İstanbul",
-  publisher: "Tente Tamiri İstanbul",
+  authors: [{ name: "Tentelisa Tente | Pergola Sistemleri" }],
+  creator: "Tentelisa Tente | Pergola Sistemleri",
+  publisher: "Tentelisa Tente | Pergola Sistemleri",
   category: "home improvement",
   icons: {
     icon: [
@@ -77,7 +81,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "tr_TR",
     url: siteUrl,
-    siteName: "Tente Tamiri İstanbul",
+    siteName: "Tentelisa Tente | Pergola Sistemleri",
     title,
     description,
     images: [
@@ -85,7 +89,7 @@ export const metadata: Metadata = {
         url: socialImage,
         width: 1200,
         height: 630,
-        alt: "İstanbul tente tamiri ve pergola servis uygulaması",
+        alt: "Tentelisa Tente | Pergola sistemleri Esenler İstanbul",
       },
     ],
   },
@@ -113,7 +117,7 @@ export const metadata: Metadata = {
   other: {
     "content-language": "tr-TR",
     "geo.region": "TR-34",
-    "geo.placename": "İstanbul",
+    "geo.placename": "Esenler, İstanbul",
     "og:image:type": "image/png",
   },
 };
@@ -143,7 +147,7 @@ const faqEntries = [
   {
     question: "İstanbul'un her ilçesine geliyor musunuz?",
     answer:
-      "İstanbul genelinde servis planlıyoruz. İlçenizi, mümkünse kısa bir videoyu ve uygun olduğunuz zamanı iletin; ulaşım ve randevu bilgisini netleştirelim.",
+      "Esenler merkezli atölyemizden İstanbul genelinde servis planlıyoruz. İlçenizi, mümkünse kısa bir videoyu ve uygun olduğunuz zamanı iletin; ulaşım ve randevu bilgisini netleştirelim.",
   },
   {
     question: "Tamir mi, yenileme mi gerektiğini nasıl anlarım?",
@@ -164,7 +168,7 @@ const structuredData = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Tente Tamiri İstanbul",
+      name: "Tentelisa Tente | Pergola Sistemleri",
       description,
       inLanguage: "tr-TR",
       publisher: { "@id": `${siteUrl}/#business` },
@@ -183,23 +187,37 @@ const structuredData = {
     {
       "@type": "LocalBusiness",
       "@id": `${siteUrl}/#business`,
-      name: "Tente Tamiri İstanbul",
-      alternateName: "Tente Tamir",
+      name: "Tentelisa Tente | Pergola sistemleri",
+      alternateName: "Tentelisa",
       url: siteUrl,
       logo: logoImage,
       image: [socialImage, logoImage],
-      telephone: "+90 553 634 50 35",
+      telephone: "+90 545 364 31 44",
       priceRange: "₺₺",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "İstanbul",
+        streetAddress: "Fatih, Fatih Cd. No:30",
+        addressLocality: "Esenler",
         addressRegion: "İstanbul",
+        postalCode: "34000",
         addressCountry: "TR",
       },
-      areaServed: {
-        "@type": "AdministrativeArea",
-        name: "İstanbul",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 41.0385843,
+        longitude: 28.8696454,
       },
+      hasMap: "https://maps.app.goo.gl/MKy9p8EzSUEgPvuf7",
+      areaServed: [
+        {
+          "@type": "AdministrativeArea",
+          name: "Esenler",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "İstanbul",
+        },
+      ],
       serviceType: serviceNames,
       knowsAbout: [
         "Tente tamiri",
@@ -210,7 +228,7 @@ const structuredData = {
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Tente servisleri",
+        name: "Tentelisa Servisleri",
         itemListElement: serviceNames.map((name) => ({
           "@type": "Offer",
           itemOffered: { "@type": "Service", name, areaServed: "İstanbul" },
@@ -218,7 +236,7 @@ const structuredData = {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+90 553 634 50 35",
+        telephone: "+90 545 364 31 44",
         contactType: "customer service",
         availableLanguage: ["Turkish"],
       },

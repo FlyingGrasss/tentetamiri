@@ -6,7 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { getSeoService, seoServices, servicePath } from "@/lib/seo-content";
 
-const siteUrl = "https://www.tentetamiri.com.tr";
+const siteUrl = "https://tentelisa.com";
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getSeoService(slug);
   if (!service) return {};
   return {
-    title: service.title,
+    title: `${service.title} | Tentelisa Esenler`,
     description: service.description,
     alternates: { canonical: servicePath(service) },
     openGraph: {
-      title: service.title,
+      title: `${service.title} | Tentelisa Esenler`,
       description: service.description,
       url: `${siteUrl}${servicePath(service)}`,
       images: [{ url: service.image, width: 1200, height: 630, alt: service.title }],
@@ -43,8 +43,11 @@ export default async function ServiceDetailPage({ params }: Props) {
       description: service.description,
       url: canonical,
       image: service.image,
-      areaServed: { "@type": "City", name: "İstanbul" },
-      provider: { "@type": "LocalBusiness", "@id": `${siteUrl}/#business`, name: "Tente Tamiri İstanbul" },
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Esenler" },
+        { "@type": "City", name: "İstanbul" },
+      ],
+      provider: { "@type": "LocalBusiness", "@id": `${siteUrl}/#business`, name: "Tentelisa Tente | Pergola sistemleri" },
       serviceType: service.title,
     },
     {
@@ -72,7 +75,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <nav className="seo-breadcrumb" aria-label="Sayfa yolu"><Link href="/">Ana sayfa</Link><span>/</span><Link href="/hizmetler">Hizmetler</Link><span>/</span><span>{service.title}</span></nav>
           <article>
             <header className="seo-detail-header">
-              <div><p className="section-label"><span>01</span> İstanbul / tente servisi</p><h1>{service.title}</h1><p>{service.description}</p></div>
+              <div><p className="section-label"><span>01</span> Tentelisa / Tente &amp; Pergola</p><h1>{service.title}</h1><p>{service.description}</p></div>
               <div className="seo-detail-image"><Image src={service.image} alt={service.title} fill unoptimized sizes="(max-width: 760px) 100vw, 43vw" priority /></div>
             </header>
             <div className="seo-detail-copy">
