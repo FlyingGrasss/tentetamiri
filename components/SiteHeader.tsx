@@ -33,6 +33,7 @@ export default function SiteHeader() {
   const links = [
     ["/", "Ana sayfa"],
     ["/hizmetler", "Hizmetler"],
+    ["/blog", "Blog"],
     ["/#sistemler", "Tente sistemleri"],
     ["/#sss", "Sık sorulanlar"],
     ["/#iletisim", "İletişim & Konum"],

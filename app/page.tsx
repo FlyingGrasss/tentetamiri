@@ -1,16 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowDownRight,
   ArrowUpRight,
+  Calendar,
   Check,
   ChevronDown,
+  Clock,
+  Star,
 } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useState } from "react";
+import { blogPosts, formatDate } from "@/lib/blog-content";
 
 const SITE_ROOT = "https://www.tentetamiri.com.tr";
 const PHONE_LABEL = "0545 364 31 44";
@@ -302,6 +307,104 @@ function Faq() {
   );
 }
 
+const testimonials = [
+  {
+    name: "Mehmet Yılmaz",
+    location: "Esenler / Davutpaşa",
+    text: "Kafemizin motorlu pergolasında ray sıkışması vardı. Aynı gün gelip motor ayarını yaptılar ve kumaşı gerdiler. İşçilik ve dürüstlük konusunda 10 numara esnaf.",
+    rating: 5,
+    service: "Pergola Tente Servisi",
+  },
+  {
+    name: "Ayşe Kaya",
+    location: "Bağcılar / Güneşli",
+    text: "Balkon tentesinin kumaşı yırtılmıştı, komple değiştirmek yerine sağlam kumaş değişimi önerdiler. Çok daha uyguna geldi ve tertemiz yaptılar.",
+    rating: 5,
+    service: "Tente Kumaş Değişimi",
+  },
+  {
+    name: "Murat Demir",
+    location: "Güngören / Sanayi",
+    text: "İş yerimiz için otomatik tente montajı yaptırdık. Ölçüden teslimata kadar her adım profesyoneldi. Zamanında teslim ve kaliteli malzeme.",
+    rating: 5,
+    service: "Otomatik Tente Montajı",
+  },
+];
+
+function Testimonials() {
+  return (
+    <section className="testimonials-section">
+      <div className="container">
+        <div className="section-heading">
+          <div>
+            <p className="section-label"><span>07</span> Müşteri Yorumları</p>
+            <h2>Gerçek işler,<br /><em>mutlu müşteriler.</em></h2>
+          </div>
+          <p className="section-copy">
+            Esenler ve İstanbul genelinde tamamladığımız projelerden aldığımız geri bildirimler.
+          </p>
+        </div>
+        <div className="testimonials-grid">
+          {testimonials.map((item) => (
+            <article className="testimonial-card" key={item.name}>
+              <div className="testimonial-stars" aria-label={`${item.rating} yıldız`}>
+                {[...Array(item.rating)].map((_, i) => (
+                  <Star key={i} size={15} fill="#ffaa00" color="#ffaa00" aria-hidden="true" />
+                ))}
+              </div>
+              <p className="testimonial-text">&ldquo;{item.text}&rdquo;</p>
+              <div className="testimonial-author">
+                <strong>{item.name}</strong>
+                <span>{item.location} • <small>{item.service}</small></span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LatestBlog() {
+  return (
+    <section className="latest-blog-section">
+      <div className="container">
+        <div className="section-heading">
+          <div>
+            <p className="section-label"><span>08</span> Blog &amp; Rehberler</p>
+            <h2>Tente ve pergola<br /><em>hakkında her şey.</em></h2>
+          </div>
+          <div className="section-heading-link">
+            <Link href="/blog" className="hero-link">
+              Tüm yazıları gör <ArrowDownRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+        <div className="blog-preview-grid">
+          {blogPosts.slice(0, 3).map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
+              <div className="blog-card-meta">
+                <span className="blog-category">{post.category}</span>
+                <span className="blog-meta-right">
+                  <Calendar size={12} aria-hidden="true" />
+                  {formatDate(post.date)}
+                  <Clock size={12} aria-hidden="true" />
+                  {post.readingTime}
+                </span>
+              </div>
+              <h3>{post.title}</h3>
+              <p>{post.description}</p>
+              <strong>
+                Yazıyı oku <ArrowUpRight size={14} aria-hidden="true" />
+              </strong>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function HomePage() {
   return (
     <main>
@@ -312,6 +415,8 @@ export default function HomePage() {
       <ServiceIndex />
       <Process />
       <Faq />
+      <Testimonials />
+      <LatestBlog />
       <SiteFooter />
     </main>
   );

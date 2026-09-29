@@ -234,6 +234,29 @@ const structuredData = {
           itemOffered: { "@type": "Service", name, areaServed: "İstanbul" },
         })),
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "28",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      review: [
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Mehmet Yılmaz" },
+          datePublished: "2024-08-15",
+          reviewBody: "Kafemizin motorlu pergolasında ray sıkışması vardı. Aynı gün gelip motor ayarını yaptılar ve kumaşı gerdiler. İşçilik ve dürüstlük konusunda 10 numara esnaf.",
+          reviewRating: { "@type": "Rating", ratingValue: "5" },
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Ayşe Kaya" },
+          datePublished: "2024-09-02",
+          reviewBody: "Balkon tentesinin kumaşı yırtılmıştı, komple değiştirmek yerine sağlam kumaş değişimi önerdiler. Çok daha uyguna geldi ve tertemiz yaptılar.",
+          reviewRating: { "@type": "Rating", ratingValue: "5" },
+        },
+      ],
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+90 545 364 31 44",

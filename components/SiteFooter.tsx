@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink, MapPin, Navigation, Phone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const SITE_ROOT = "https://www.tentetamiri.com.tr";
@@ -30,6 +33,25 @@ function SiteLogo() {
 }
 
 export default function SiteFooter() {
+  const mapRef = useRef<HTMLDivElement>(null);
+  const [mapSrc, setMapSrc] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const el = mapRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setMapSrc(MAPS_EMBED);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <section className="contact-section" id="iletisim">
@@ -101,18 +123,23 @@ export default function SiteFooter() {
                   Yol Tarifi Al <ExternalLink size={12} />
                 </a>
               </div>
-              <div className="contact-map-frame-wrap">
-                <iframe
-                  title="Tentelisa Tente Pergola sistemleri Esenler Konumu"
-                  src={MAPS_EMBED}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={false}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="contact-map-iframe"
-                />
+              <div className="contact-map-frame-wrap" ref={mapRef}>
+                {mapSrc ? (
+                  <iframe
+                    title="Tentelisa Tente Pergola sistemleri Esenler Konumu"
+                    src={mapSrc}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="contact-map-iframe"
+                  />
+                ) : (
+                  <div className="contact-map-placeholder" aria-hidden="true">
+                    <span>📍</span>
+                  </div>
+                )}
               </div>
               <div className="contact-map-footer">
                 <span>📍 {ADDRESS}</span>
@@ -133,6 +160,7 @@ export default function SiteFooter() {
           </p>
           <div className="footer-links">
             <Link href="/#hizmetler">Hizmetler</Link>
+            <Link href="/blog">Blog</Link>
             <Link href="/#sistemler">Sistemler</Link>
             <Link href="/#sss">SSS</Link>
             <a href={MAPS_URL} target="_blank" rel="noreferrer">Harita</a>

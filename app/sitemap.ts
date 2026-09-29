@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { seoServices, servicePath } from "@/lib/seo-content";
+import { blogPosts } from "@/lib/blog-content";
 
 const siteUrl = "https://tentelisa.com";
 
@@ -10,13 +11,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
-      images: [`${siteUrl}/admin/image/653-tente-tamiri10.jpg`],
     },
     {
       url: `${siteUrl}/hizmetler`,
       changeFrequency: "monthly",
       priority: 0.9,
-      images: [`${siteUrl}/admin/image/653-tente-tamiri10.jpg`],
+    },
+    {
+      url: `${siteUrl}/blog`,
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
   ];
 
@@ -27,6 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [service.image],
+    })),
+    ...blogPosts.map((post) => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      lastModified: new Date(post.date),
     })),
   ];
 }
