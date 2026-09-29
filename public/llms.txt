@@ -1,25 +1,15 @@
 # Tentelisa Tente ve Pergola Sistemleri
 
-> Esenler ve İstanbul genelinde profesyonel tente tamiri, motorlu pergola servisi, branda onarımı ve tente montajı hizmetleri.
+> Esenler ve İstanbul genelinde profesyonel tente tamiri, motorlu pergola servisi, branda onarımı ve tente montajı.
 
-## Firma Bilgileri
-- **Firma Adı:** Tentelisa Tente | Pergola sistemleri
-- **Adres:** Fatih, Fatih Cd. No:30, 34000 Esenler/İstanbul
-- **Telefon:** 0545 364 31 44
-- **WhatsApp:** 0545 364 31 44 (https://wa.me/905453643144)
-- **Web:** https://tentelisa.com
-- **Hizmet Bölgesi:** Esenler, Bağcılar, Güngören, Sultangazi, Gaziosmanpaşa, Bakırköy, Küçükçekmece ve tüm İstanbul.
-
-## Hizmetlerimiz
-- **Tente Tamiri:** Kollu tente, sabit tente, kumaş değişimi, kol ve mekanizma onarımı.
-- **Otomatik Tente Servisi:** Motor arızaları, kumanda eşleştirme, limit ve rüzgar sensörü ayarı.
-- **Pergola Tente Servisi:** Ray, taşıyıcı profil, gergi ayarı, kumaş değişimi ve su tahliye oluğu onarımı.
-- **Branda Tamiri:** PVC kapama, şeffaf branda, dikiş, ek ve kuşgözü yenileme.
-- **Çadır Tamiri:** Kumaş dikişi, iskelet ve profil onarımı, fermuar değişimi.
-- **Tente Montajı:** Ev ve işletmeler için yerinde keşif, ölçü ve profesyonel kurulum.
-
-## Bağlantılar
-- Ana Sayfa: https://tentelisa.com
-- Hizmetler: https://tentelisa.com/hizmetler
-- Blog ve Rehberler: https://tentelisa.com/blog
-- Google Haritalar: https://maps.app.goo.gl/MKy9p8EzSUEgPvuf7
+## Hizmetlerimiz ve Sayfalar
+- [Tentelisa Ana Sayfa](https://tentelisa.com): İstanbul geneli ve Esenler tente ve pergola tamir, montaj ve bakım servisi.
+- [Hizmetlerimiz](https://tentelisa.com/hizmetler): Tüm tente, pergola, branda ve çadır tamir servislerimizin listesi.
+- [Tente Tamiri](https://tentelisa.com/hizmetler/tente-tamiri): Kollu, sabit ve motorlu tente kumaş ve mekanizma onarımı.
+- [Otomatik Tente Servisi](https://tentelisa.com/hizmetler/otomatik-tente-servisi): Otomatik motor, kumanda, rüzgar sensörü ve limit ayarı.
+- [Pergola Tente Servisi](https://tentelisa.com/hizmetler/pergola-tente-servisi): Ray, profil, su tahliye ve pergola kumaş servisi.
+- [Branda Tamiri](https://tentelisa.com/hizmetler/branda-tamiri): PVC, şeffaf kapama ve dikiş onarımı.
+- [Çadır Tamiri](https://tentelisa.com/hizmetler/cadir-tamiri): İskelet, fermuar ve kumaş tamiri.
+- [Tente Montajı](https://tentelisa.com/hizmetler/tente-montaji): Ev ve işletmeler için yerinde montaj ve keşif.
+- [Blog & Rehberler](https://tentelisa.com/blog): Tente ömrü, pergola seçimi ve bakım rehberleri.
+- [Google Haritalar Konumu](https://maps.app.goo.gl/MKy9p8EzSUEgPvuf7): Esenler atölye konumu ve yol tarifi.

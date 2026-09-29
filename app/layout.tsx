@@ -285,10 +285,6 @@ export default function RootLayout({
       className={`${manrope.variable} ${space.variable} ${dmSans.variable} ${instrument.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <link rel="preconnect" href="https://www.tentetamiri.com.tr" />
-        <link rel="dns-prefetch" href="https://www.tentetamiri.com.tr" />
-      </head>
       <body>
         <FontVariant />
         <SmoothScroll />

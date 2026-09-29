@@ -141,7 +141,25 @@ export function getBlogPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
 }
 
+const turkishMonths: Record<string, string> = {
+  "01": "Ocak",
+  "02": "Şubat",
+  "03": "Mart",
+  "04": "Nisan",
+  "05": "Mayıs",
+  "06": "Haziran",
+  "07": "Temmuz",
+  "08": "Ağustos",
+  "09": "Eylül",
+  "10": "Ekim",
+  "11": "Kasım",
+  "12": "Aralık",
+};
+
 export function formatDate(dateStr: string): string {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
+  const parts = dateStr.split("-");
+  if (parts.length !== 3) return dateStr;
+  const [year, month, day] = parts;
+  const monthName = turkishMonths[month] || month;
+  return `${parseInt(day, 10)} ${monthName} ${year}`;
 }
