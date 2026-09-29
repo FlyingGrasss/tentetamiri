@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Instrument_Serif, Manrope, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import FontVariant from "@/components/FontVariant";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
@@ -8,28 +8,9 @@ const siteUrl = "https://tentelisa.com";
 const socialImage = "https://tentelisa.com/og-image.png";
 const logoImage = `${siteUrl}/image/logo.png`;
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-});
-
 const space = Space_Grotesk({
   variable: "--font-space",
   subsets: ["latin", "latin-ext"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-});
-
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-  weight: "400",
   display: "swap",
 });
 
@@ -282,7 +263,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${manrope.variable} ${space.variable} ${dmSans.variable} ${instrument.variable}`}
+      className={`${space.variable}`}
       suppressHydrationWarning
     >
       <body>
@@ -291,6 +272,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=828&q=75"
+          imageSrcSet="/_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=828&q=75 828w"
+          imageSizes="(max-width: 760px) 100vw, 49vw"
+          fetchPriority="high"
         />
         {children}
       </body>

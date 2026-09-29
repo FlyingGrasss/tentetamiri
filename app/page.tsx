@@ -217,9 +217,9 @@ function Systems() {
           <a className="light-link" href={whatsappHref("Pergola ve tente sistemleri için servis bilgisi almak istiyorum.")} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} className="whatsapp-icon" /> Pergola servisi için yazın <ArrowUpRight size={16} aria-hidden="true" /></a>
         </div>
         <div className="system-mosaic">
-          <div className="mosaic-image mosaic-image-large"><Image src={showcaseItems[1].image} alt="Pergola tente uygulaması" fill sizes="(max-width: 760px) 100vw, 46vw" /></div>
-          <div className="mosaic-image"><Image src={showcaseItems[2].image} alt="Branda uygulaması" fill sizes="(max-width: 760px) 46vw, 22vw" /></div>
-          <div className="mosaic-image"><Image src={showcaseItems[3].image} alt="Çadır uygulaması" fill sizes="(max-width: 760px) 46vw, 22vw" /></div>
+          <div className="mosaic-image mosaic-image-large"><Image src={showcaseItems[1].image} alt="Pergola tente uygulaması" fill sizes="(max-width: 760px) 100vw, 46vw" quality={60} /></div>
+          <div className="mosaic-image"><Image src={showcaseItems[2].image} alt="Branda uygulaması" fill sizes="(max-width: 760px) 46vw, 22vw" quality={60} /></div>
+          <div className="mosaic-image"><Image src={showcaseItems[3].image} alt="Çadır uygulaması" fill sizes="(max-width: 760px) 46vw, 22vw" quality={60} /></div>
           <span className="mosaic-index">GERÇEK İŞLER / 2026</span>
         </div>
       </div>
