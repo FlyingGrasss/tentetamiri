@@ -285,12 +285,16 @@ export default function RootLayout({
       className={`${manrope.variable} ${space.variable} ${dmSans.variable} ${instrument.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="preconnect" href="https://www.tentetamiri.com.tr" />
+        <link rel="dns-prefetch" href="https://www.tentetamiri.com.tr" />
+      </head>
       <body>
         <FontVariant />
         <SmoothScroll />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
         />
         {children}
       </body>

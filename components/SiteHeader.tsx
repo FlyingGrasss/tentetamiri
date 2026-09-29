@@ -20,7 +20,6 @@ function SiteLogo() {
         alt="Tentelisa Tente logo"
         width={278}
         height={130}
-        unoptimized
         priority
       />
     </Link>

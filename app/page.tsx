@@ -150,7 +150,6 @@ function Hero() {
                 src={item.image}
                 alt={item.title}
                 fill
-                unoptimized
                 sizes="(max-width: 760px) 100vw, 49vw"
                 className="hero-image"
                 priority
@@ -189,7 +188,7 @@ function Services() {
           {services.map((service) => (
             <article className="service-card" key={service.number}>
               <div className="service-card-image">
-                <Image src={service.image} alt={service.title} fill unoptimized sizes="(max-width: 760px) 100vw, 33vw" />
+                <Image src={service.image} alt={service.title} fill sizes="(max-width: 760px) 100vw, 33vw" />
                 <span>{service.number}</span>
               </div>
               <div className="service-card-copy">
@@ -218,9 +217,9 @@ function Systems() {
           <a className="light-link" href={whatsappHref("Pergola ve tente sistemleri için servis bilgisi almak istiyorum.")} target="_blank" rel="noreferrer"><WhatsAppIcon size={16} className="whatsapp-icon" /> Pergola servisi için yazın <ArrowUpRight size={16} aria-hidden="true" /></a>
         </div>
         <div className="system-mosaic">
-          <div className="mosaic-image mosaic-image-large"><Image src={showcaseItems[1].image} alt="Pergola tente uygulaması" fill unoptimized sizes="(max-width: 760px) 100vw, 46vw" /></div>
-          <div className="mosaic-image"><Image src={showcaseItems[2].image} alt="Branda uygulaması" fill unoptimized sizes="(max-width: 760px) 46vw, 22vw" /></div>
-          <div className="mosaic-image"><Image src={showcaseItems[3].image} alt="Çadır uygulaması" fill unoptimized sizes="(max-width: 760px) 46vw, 22vw" /></div>
+          <div className="mosaic-image mosaic-image-large"><Image src={showcaseItems[1].image} alt="Pergola tente uygulaması" fill sizes="(max-width: 760px) 100vw, 46vw" /></div>
+          <div className="mosaic-image"><Image src={showcaseItems[2].image} alt="Branda uygulaması" fill sizes="(max-width: 760px) 46vw, 22vw" /></div>
+          <div className="mosaic-image"><Image src={showcaseItems[3].image} alt="Çadır uygulaması" fill sizes="(max-width: 760px) 46vw, 22vw" /></div>
           <span className="mosaic-index">GERÇEK İŞLER / 2026</span>
         </div>
       </div>
@@ -347,7 +346,7 @@ function Testimonials() {
         <div className="testimonials-grid">
           {testimonials.map((item) => (
             <article className="testimonial-card" key={item.name}>
-              <div className="testimonial-stars" aria-label={`${item.rating} yıldız`}>
+              <div className="testimonial-stars" role="img" aria-label={`${item.rating} üzerinden 5 yıldız`}>
                 {[...Array(item.rating)].map((_, i) => (
                   <Star key={i} size={15} fill="#ffaa00" color="#ffaa00" aria-hidden="true" />
                 ))}

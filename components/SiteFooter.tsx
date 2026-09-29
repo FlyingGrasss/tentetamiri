@@ -26,7 +26,6 @@ function SiteLogo() {
         alt="Tentelisa Tente logo"
         width={278}
         height={130}
-        unoptimized
       />
     </Link>
   );
@@ -159,7 +158,7 @@ export default function SiteFooter() {
             Gölgenizi yeniden kuruyoruz.
           </p>
           <div className="footer-links">
-            <Link href="/#hizmetler">Hizmetler</Link>
+            <Link href="/hizmetler">Hizmetler</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/#sistemler">Sistemler</Link>
             <Link href="/#sss">SSS</Link>
@@ -168,7 +167,7 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="container footer-bottom">
-          <span>© {new Date().getFullYear()} Tentelisa Tente | Pergola sistemleri Esenler</span>
+          <span>© 2026 Tentelisa Tente | Pergola sistemleri Esenler</span>
           <span>Esenler, İstanbul / Türkiye</span>
           <span>
             <a href={SITE_URL} target="_blank" rel="noreferrer">

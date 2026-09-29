@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --red: #ff0000;
-  --red-dark: #c90000;
+  --red: #c80000;
+  --red-bright: #ff0000;
+  --red-dark: #a00000;
   --black: #0b0b0b;
   --charcoal: #151515;
   --paper: #ffffff;
   --soft: #f2f2f2;
   --line: #d6d6d6;
-  --muted: #6b6b6b;
-  --blue: #1081a6;
+  --muted: #4a4a4a;
+  --blue: #08617e;
   --container: 1230px;
   --site-font: var(--font-space), Arial, sans-serif;
   --site-display: var(--font-space), Arial, sans-serif;
@@ -99,9 +100,9 @@ a:focus-visible {
 }
 
 .utility-bar {
-  border-bottom: 1px solid #b80000;
-  background: var(--red);
-  color: #fff;
+  border-bottom: 1px solid #990000;
+  background: #b50000;
+  color: #ffffff;
 }
 
 .utility-inner {
@@ -1107,7 +1108,7 @@ a:focus-visible {
 
 .contact-address-item strong {
   display: block;
-  color: rgb(255 255 255 / 0.72);
+  color: #ffffff;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -1129,7 +1130,7 @@ a:focus-visible {
 .contact-lead-text {
   max-width: 490px;
   margin: 0 0 26px;
-  color: rgb(255 255 255 / 0.88);
+  color: #ffffff;
   font-size: 14px;
   line-height: 1.65;
 }
@@ -1677,8 +1678,8 @@ a:focus-visible {
 
 .blog-category {
   padding: 4px 10px;
-  background: var(--soft);
-  color: var(--red);
+  background: #151515;
+  color: #ffffff;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -1715,7 +1716,7 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--red);
+  color: var(--red-dark);
   font-size: 12px;
   font-weight: 800;
 }
@@ -1843,7 +1844,7 @@ a:focus-visible {
 
 .footer-main > p {
   margin: 0;
-  color: rgb(255 255 255 / 0.55);
+  color: rgb(255 255 255 / 0.82);
   font-size: 12px;
   line-height: 1.6;
 }
@@ -1868,7 +1869,7 @@ a:focus-visible {
   gap: 13px;
   border-top: 1px solid rgb(255 255 255 / 0.15);
   padding-top: 19px;
-  color: rgb(255 255 255 / 0.38);
+  color: rgb(255 255 255 / 0.78);
   font-size: 10px;
 }
 

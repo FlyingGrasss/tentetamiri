@@ -76,7 +76,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <article>
             <header className="seo-detail-header">
               <div><p className="section-label"><span>01</span> Tentelisa / Tente &amp; Pergola</p><h1>{service.title}</h1><p>{service.description}</p></div>
-              <div className="seo-detail-image"><Image src={service.image} alt={service.title} fill unoptimized sizes="(max-width: 760px) 100vw, 43vw" priority /></div>
+              <div className="seo-detail-image"><Image src={service.image} alt={service.title} fill sizes="(max-width: 760px) 100vw, 43vw" priority /></div>
             </header>
             <div className="seo-detail-copy">
               {service.introduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}

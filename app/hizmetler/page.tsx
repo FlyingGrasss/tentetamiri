@@ -67,7 +67,7 @@ export default function ServicesPage() {
             <div className="seo-service-grid">
               {seoServices.map((service, index) => (
                 <Link className="seo-service-card" href={servicePath(service)} key={service.slug}>
-                  <div className="seo-service-card-image"><Image src={service.image} alt={service.title} fill unoptimized sizes="(max-width: 760px) 100vw, 33vw" /></div>
+                  <div className="seo-service-card-image"><Image src={service.image} alt={service.title} fill sizes="(max-width: 760px) 100vw, 33vw" /></div>
                   <div className="seo-service-card-copy">
                     <span>0{index + 1}</span>
                     <h2>{service.title}</h2>
