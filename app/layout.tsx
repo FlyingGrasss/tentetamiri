@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { preload } from "react-dom";
 import { Space_Grotesk } from "next/font/google";
 import FontVariant from "@/components/FontVariant";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -11,7 +12,7 @@ const logoImage = `${siteUrl}/image/logo.png`;
 const space = Space_Grotesk({
   variable: "--font-space",
   subsets: ["latin", "latin-ext"],
-  display: "swap",
+  display: "optional",
 });
 
 const title = "Tentelisa Tente | Pergola sistemleri Esenler";
@@ -260,6 +261,16 @@ const structuredData = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  preload(
+    "/_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=828&q=75",
+    {
+      as: "image",
+      fetchPriority: "high",
+      imageSrcSet:
+        "/_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=828&q=75 828w",
+      imageSizes: "(max-width: 760px) 100vw, 49vw",
+    }
+  );
   return (
     <html
       lang="tr"
@@ -272,14 +283,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=828&q=75"
-          imageSrcSet="/_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fwww.tentetamiri.com.tr%2Fadmin%2Fimage%2F653-tente-tamiri10.jpg&w=828&q=75 828w"
-          imageSizes="(max-width: 760px) 100vw, 49vw"
-          fetchPriority="high"
         />
         {children}
       </body>
