@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { preload } from "react-dom";
 import { Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import FontVariant from "@/components/FontVariant";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
@@ -278,6 +279,22 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-PVHC0W5VWE"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-PVHC0W5VWE');
+          `}
+        </Script>
         <FontVariant />
         <SmoothScroll />
         <script
