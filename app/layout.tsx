@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { preload } from "react-dom";
 import { Space_Grotesk } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import FontVariant from "@/components/FontVariant";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
@@ -302,6 +303,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
